@@ -4,7 +4,7 @@ private class Cuerpo{
   private PVector posicion;
   public Cuerpo(PVector posicion){
     this.posicion=posicion;
-    cuadrado=new Cuadrado(new PVector(this.posicion.x,this.posicion.y+10),20);
+    cuadrado=new Cuadrado(new PVector(this.posicion.x-10,this.posicion.y),20);
     
   }
   

@@ -7,8 +7,8 @@ private class Cabeza{
     collider=new Collider(20.0,new PVector(this.posicion.x,this.posicion.y));
     noStroke();
     fill(#0BFF00);
-    square(this.posicion.x,this.posicion.y-20,20);
-    rect(this.posicion.x-10,this.posicion.y,40,20);
+    circle(this.posicion.x,this.posicion.y,40);
+    
   }
   
   public void comer(Animal animalComido){

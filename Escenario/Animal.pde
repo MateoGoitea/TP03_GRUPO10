@@ -5,8 +5,10 @@ private class Animal extends GameObject{
   private Collider collider;
   
   public Animal(){
+    
   }
   
   public void display(){
+    
   }
 }
