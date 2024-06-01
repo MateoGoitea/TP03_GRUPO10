@@ -1,8 +1,10 @@
 private class Cuerpo{
- 
+ private Cuadrado cuadrado;
   private ArrayList<Cuadrado> cuadrados;
-  
-  public Cuerpo(){
+  private PVector posicion;
+  public Cuerpo(PVector posicion){
+    this.posicion=posicion;
+    cuadrado=new Cuadrado(new PVector(this.posicion.x,this.posicion.y+10),20);
     
   }
   

@@ -8,7 +8,9 @@ public void setup(){
 
 public void draw(){
   background(0);
+  //snake=new Snake(new PVector(mouseX,mouseY)); prueba del dibujo de snake
 }
 
 public void keyPressed(){
+
 }
