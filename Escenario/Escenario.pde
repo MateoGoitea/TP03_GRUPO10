@@ -4,7 +4,7 @@ private ArrayList<Animal> animal;
 
 public void setup() {
   size(600, 600);
-  snake=new Snake(new PVector(100, 100), 10);// prueba del dibujo de snake
+  snake=new Snake(new PVector(100, 100), 5);// prueba del dibujo de snake
 }
 
 public void draw() {
@@ -14,15 +14,15 @@ public void draw() {
 
 public void keyPressed() {
   if (keyCode==RIGHT) {
-    snake.mover(0);
+    snake.setDireccion(0);
   }
   if (keyCode==LEFT) {
-    snake.mover(1);
+    snake.setDireccion(1);
   }
   if (keyCode==UP) {
-    snake.mover(2);
+    snake.setDireccion(2);
   }
   if (keyCode==DOWN) {
-    snake.mover(3);
+    snake.setDireccion(3);
   }
 }
