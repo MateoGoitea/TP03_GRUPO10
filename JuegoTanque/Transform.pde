@@ -3,7 +3,7 @@ class Transform{
   
   public Transform(PVector posicion){
   this.posicion=posicion;}
-  
+
   public PVector getPosicion(){
   return posicion;}
   
