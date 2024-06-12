@@ -1,12 +1,36 @@
 private class Animal extends GameObject {
 
   private int valorAnimal;
-  private ArrayList<TipoAnimal> tipoAnimales;
-  private Collider collider;
+  private int tipo;
+  private PImage imagen;
 
-  public Animal() {
+  private ArrayList<TipoAnimal> tipoAnimal;
+  private Collider collider;
+  
+  
+  public Animal(PVector posicion, int tipo,PImage imagen) {
+    this.posicion=posicion;
+    this.tipo=tipo;
+
+    switch(tipo){
+      case 1:
+        this.imagen=loadImage("insecto.png");
+        valorAnimal=5;
+        break;
+      case 2:
+        this.imagen=loadImage("raton.png");
+        valorAnimal=10;
+        break;
+      case 3:
+        this.imagen=loadImage("pajaro.png");
+        valorAnimal=15;
+        break;
+    }
+    
+    this.display();
   }
 
   public void display() {
+    image(this.imagen,this.posicion.x, this.posicion.y);
   }
 }
