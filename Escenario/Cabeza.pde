@@ -8,8 +8,19 @@ private class Cabeza {
     noStroke();
     fill(#0BFF00);
     circle(this.posicion.x, this.posicion.y, 40);
+    
   }
 
   public void comer(Animal animalComido) {
+    boolean isCollide = this.collider.validarCollider(animalComido.getCollider());
+    
+    if (isCollide==true){
+      println("Animal comido");
+    }
+  }
+  
+  
+  public Collider getCollider(){
+    return this.collider;
   }
 }

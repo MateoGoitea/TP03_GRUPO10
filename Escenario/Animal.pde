@@ -27,10 +27,17 @@ private class Animal extends GameObject {
         break;
     }
     
+    collider=new Collider(20.0, new PVector(this.posicion.x, this.posicion.y));
+    
     this.display();
   }
 
   public void display() {
     image(this.imagen,this.posicion.x, this.posicion.y);
+  }
+  
+  
+  public Collider getCollider(){
+    return this.collider;
   }
 }

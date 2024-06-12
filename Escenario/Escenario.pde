@@ -1,24 +1,29 @@
 private Snake snake;
-private Animal animal;
+private ArrayList<Animal> animal;
 
 private boolean animalExist;
 
 
 public void setup() {
   size(600, 600);
+  animal = new ArrayList<Animal>();
+  
   animalExist=false;
   snake=new Snake(new PVector(100, 100), 5);// prueba del dibujo de snake
 }
 
 public void draw() {
   background(0);
+    
   snake.display();
   
   if (animalExist==false){
-    animal = new Animal(new PVector(random(0,width),random(0,height)),(int)random(1,4),loadImage("raton.png"));
+    animal.add(new Animal(new PVector(random(0,width),random(0,height)),(int)random(1,4),loadImage("raton.png")));
     animalExist=true;
   }
-  animal.display();
+  Animal ani = animal.get(0);
+  ani.display();
+
 }
 
 public void keyPressed() {
