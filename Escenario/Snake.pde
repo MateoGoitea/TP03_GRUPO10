@@ -20,16 +20,16 @@ private class Snake extends GameObject {
 
   public void mover(int direccion) {
     if (direccion==0) {
-      this.posicion.x=this.posicion.x+velocidad;
+      this.posicion.x=this.posicion.x+velocidad*DeltaTime.getDeltaTime(frameRate);
     }
     if (direccion==1) {
-      this.posicion.x=this.posicion.x-velocidad;
+      this.posicion.x=this.posicion.x-velocidad*DeltaTime.getDeltaTime(frameRate);
     }
     if (direccion==2) {
-      this.posicion.y=this.posicion.y-velocidad;
+      this.posicion.y=this.posicion.y-velocidad*DeltaTime.getDeltaTime(frameRate);
     }
     if (direccion==3) {
-      this.posicion.y=this.posicion.y+velocidad;
+      this.posicion.y=this.posicion.y+velocidad*DeltaTime.getDeltaTime(frameRate);
     }
   }
 

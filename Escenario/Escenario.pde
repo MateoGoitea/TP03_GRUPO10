@@ -6,10 +6,11 @@ private boolean animalExist;
 
 public void setup() {
   size(600, 600);
+  frameRate(60);
   animal = new ArrayList<Animal>();
   
   animalExist=false;
-  snake=new Snake(new PVector(100, 100), 5);// prueba del dibujo de snake
+  snake=new Snake(new PVector(100, 100), 200);// prueba del dibujo de snake
 }
 
 public void draw() {
