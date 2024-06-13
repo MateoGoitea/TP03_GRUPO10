@@ -5,6 +5,7 @@ private ArrayList<Animal> animal;
 private boolean animalExist;
 private int tiempo;
 
+private int estado;
 
 public void setup() {
   size(600, 600);
@@ -14,11 +15,13 @@ public void setup() {
 
   animalExist=false;
   tiempo=0;
+  estado=StateMachine.JUGANDO;
   
   snake=new Snake(new PVector(100, 100), 200);
 }
 
 public void draw() {
+  if (estado==StateMachine.JUGANDO){
   background(0);
   
   tiempo=(millis()+1000)/1000;
@@ -34,6 +37,11 @@ public void draw() {
   ani.display();
 
   snake.cabeza.comer(ani);
+  }
+  if (tiempo>=10){
+    estado=StateMachine.TERMINADO;
+    snake.visualizarResultados();
+  }
 }
 
 public void keyPressed() {

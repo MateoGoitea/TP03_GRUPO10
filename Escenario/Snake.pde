@@ -40,6 +40,10 @@ private class Snake extends GameObject {
     fill(#ffffff);
     text("Puntaje:"+puntaje,20,20);
   }
+  
+  public void visualizarResultados(){
+  
+  }
 
   public void setDireccion(int direccion) {
     this.direccion=direccion;
