@@ -2,6 +2,10 @@ private class Cabeza {
   private PVector posicion;
   private boolean estadoAnimal;
   private Collider collider;
+  
+  private ArrayList<String> animalTipo= new ArrayList<String>();
+  private ArrayList<Integer> tiempoComido= new ArrayList<Integer>();
+
 
   public Cabeza(PVector posicion) {
     this.posicion=posicion;
@@ -20,10 +24,25 @@ private class Cabeza {
       int puntajeSumado=animalComido.getValor();
       snake.setPuntaje(snake.getPuntaje()+puntajeSumado);
       
+      
+      switch(animalComido.getTipo()){
+        case 1:
+          animalTipo.add("Insecto");
+          tiempoComido.add(getTiempo());
+          break;
+        case 2:
+          animalTipo.add("Raton");
+          tiempoComido.add(getTiempo());
+          break;
+        case 3:
+          animalTipo.add("Pajaro");
+          tiempoComido.add(getTiempo());
+          break;
+      }
+      
       setAnimalExist(false);
       animal.remove(0);
-      
-      
+ 
     }
   }
 

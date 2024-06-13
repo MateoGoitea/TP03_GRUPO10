@@ -1,7 +1,9 @@
 private Snake snake;
 private ArrayList<Animal> animal;
 
+
 private boolean animalExist;
+private int tiempo;
 
 
 public void setup() {
@@ -9,13 +11,18 @@ public void setup() {
   frameRate(60);
   animal = new ArrayList<Animal>();
 
+
   animalExist=false;
+  tiempo=0;
   
   snake=new Snake(new PVector(100, 100), 200);
 }
 
 public void draw() {
   background(0);
+  
+  tiempo=(millis()+1000)/1000;
+  text("Tiempo: "+tiempo,width-100,20);
 
   snake.display();
 
@@ -46,4 +53,8 @@ public void keyPressed() {
 
 public void setAnimalExist (boolean animalExist){
   this.animalExist=animalExist;
+}
+
+public int getTiempo(){
+  return this.tiempo;
 }

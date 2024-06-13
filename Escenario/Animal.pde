@@ -44,4 +44,8 @@ private class Animal extends GameObject {
   public Collider getCollider() {
     return this.collider;
   }
+  
+  public int getTipo(){
+    return this.tipo;
+  }
 }
