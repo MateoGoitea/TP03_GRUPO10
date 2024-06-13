@@ -3,8 +3,6 @@ private class Animal extends GameObject {
   private int valorAnimal;
   private int tipo;
   private PImage imagen;
-
-  private ArrayList<TipoAnimal> tipoAnimal;
   private Collider collider;
 
 

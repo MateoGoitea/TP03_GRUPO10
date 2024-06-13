@@ -1,6 +1,5 @@
 private class Cabeza {
   private PVector posicion;
-  private boolean estadoAnimal;
   private Collider collider;
   
   private ArrayList<String> animalTipo= new ArrayList<String>();
