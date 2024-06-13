@@ -1,5 +1,6 @@
 private class Cabeza {
   private PVector posicion;
+  private boolean estadoAnimal;
   private Collider collider;
 
   public Cabeza(PVector posicion) {
@@ -15,9 +16,14 @@ private class Cabeza {
     boolean isCollide = this.collider.validarCollider(animalComido.getCollider());
 
     if (isCollide==true) {
-      println("Animal comido");
-    } else {
-      println("Animal sin comer");
+      
+      int puntajeSumado=animalComido.getValor();
+      snake.setPuntaje(snake.getPuntaje()+puntajeSumado);
+      
+      setAnimalExist(false);
+      animal.remove(0);
+      
+      
     }
   }
 

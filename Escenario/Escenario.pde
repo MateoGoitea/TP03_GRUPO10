@@ -10,6 +10,7 @@ public void setup() {
   animal = new ArrayList<Animal>();
 
   animalExist=false;
+  
   snake=new Snake(new PVector(100, 100), 200);
 }
 
@@ -41,4 +42,8 @@ public void keyPressed() {
   if (keyCode==DOWN) {
     snake.setDireccion(3);
   }
+}
+
+public void setAnimalExist (boolean animalExist){
+  this.animalExist=animalExist;
 }

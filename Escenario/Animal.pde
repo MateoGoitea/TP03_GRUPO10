@@ -37,6 +37,10 @@ private class Animal extends GameObject {
   }
 
 
+  public int getValor(){
+    return this.valorAnimal;
+  }
+
   public Collider getCollider() {
     return this.collider;
   }
