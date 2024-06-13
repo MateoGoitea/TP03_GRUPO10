@@ -15,7 +15,6 @@ private class Snake extends GameObject {
     cabeza=new Cabeza(new PVector(this.posicion.x, this.posicion.y));
     cuerpos=new Cuerpo(new PVector(this.posicion.x, this.posicion.y+15));
     this.mover(direccion);
-    
   }
 
   public void mover(int direccion) {
@@ -35,8 +34,8 @@ private class Snake extends GameObject {
 
   public void visualizarPuntaje() {
   }
-  
-  public void setDireccion(int direccion){
+
+  public void setDireccion(int direccion) {
     this.direccion=direccion;
   }
 }
