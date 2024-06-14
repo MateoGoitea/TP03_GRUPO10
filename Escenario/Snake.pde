@@ -5,17 +5,27 @@ private class Snake extends GameObject {
   private int direccion;
   private Cabeza cabeza;
   private Cuerpo cuerpos;
+  
+  private int posTexto;
+  private int distTexto;
 
   public Snake(PVector posicion, int velocidad) {
+    
     
     this.posicion=posicion;
     this.velocidad=velocidad;
     
     this.puntaje=0;
+    this.posTexto=70;
+    this.distTexto=20;
+    
+    cabeza=new Cabeza(new PVector(this.posicion.x, this.posicion.y));
   }
 
   public void display() {
-    cabeza=new Cabeza(new PVector(this.posicion.x, this.posicion.y));
+
+    cabeza.display(this.posicion);
+        
     cuerpos=new Cuerpo(new PVector(this.posicion.x, this.posicion.y+15));
     this.mover(direccion);
     this.visualizarPuntaje();
@@ -42,7 +52,16 @@ private class Snake extends GameObject {
   }
   
   public void visualizarResultados(){
-  
+    stroke(#ffffff);
+    strokeWeight(10);
+    fill(0);
+    rect(50,50,500,500);
+    
+    fill(#ffffff);
+    text("Animal Comido ---------------- Tiempo",posTexto,posTexto);
+    for (int x=0;x<cabeza.animalTipo.size()-1;x++){
+      text(cabeza.animalTipo.get(x)+" ---------------- "+cabeza.tiempoComido.get(x),posTexto,posTexto+distTexto*(x+1));
+    }
   }
 
   public void setDireccion(int direccion) {

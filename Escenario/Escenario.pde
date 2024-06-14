@@ -7,9 +7,15 @@ private int tiempo;
 
 private int estado;
 
+private PFont font;
+
 public void setup() {
   size(600, 600);
   frameRate(60);
+  
+
+  font=createFont("arial.ttf",20);
+  textFont(font);
   animal = new ArrayList<Animal>();
 
 
@@ -30,7 +36,7 @@ public void draw() {
   snake.display();
 
   if (animalExist==false) {
-    animal.add(new Animal(new PVector(random(0, width), random(0, height)), (int)random(1, 4), loadImage("raton.png")));
+    animal.add(new Animal(new PVector(random(20, width-20), random(20, height-20)), (int)random(1, 4), loadImage("raton.png")));
     animalExist=true;
   }
   Animal ani = animal.get(0);
@@ -38,7 +44,7 @@ public void draw() {
 
   snake.cabeza.comer(ani);
   }
-  if (tiempo>=10){
+  if (tiempo>=60){
     estado=StateMachine.TERMINADO;
     snake.visualizarResultados();
   }

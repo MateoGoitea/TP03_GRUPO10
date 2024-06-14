@@ -2,13 +2,23 @@ private class Cabeza {
   private PVector posicion;
   private Collider collider;
   
-  private ArrayList<String> animalTipo= new ArrayList<String>();
-  private ArrayList<Integer> tiempoComido= new ArrayList<Integer>();
+  private ArrayList<String> animalTipo;
+  private ArrayList<Integer> tiempoComido;
 
 
   public Cabeza(PVector posicion) {
     this.posicion=posicion;
+    this.display(this.posicion);
+    
+    animalTipo=new ArrayList<String>();
+    tiempoComido= new ArrayList<Integer>();
+  }
+  
+//Se puso la visualización de la cabeza por aparte debido a q al estar creando una cabeza en el constructor de snake, constantemente estaba reiniciando las arrays
+  public void display(PVector newPosicion){
+    
     this.collider=new Collider(20.0, this.posicion);
+    this.posicion=newPosicion;
     noStroke();
     fill(#0BFF00);
     circle(this.posicion.x, this.posicion.y, 40);
@@ -38,6 +48,7 @@ private class Cabeza {
           tiempoComido.add(getTiempo());
           break;
       }
+      
       
       setAnimalExist(false);
       animal.remove(0);
