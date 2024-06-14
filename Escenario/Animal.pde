@@ -10,6 +10,7 @@ private class Animal extends GameObject {
     this.posicion=posicion;
     this.tipo=tipo;
 
+    //Segun el tipo obtenido se le asignará su imagen y valor correspondientes
     switch(tipo) {
     case 1:
       this.imagen=loadImage("insecto.png");
@@ -25,7 +26,7 @@ private class Animal extends GameObject {
       break;
     }
 
-    this.collider=new Collider(20.0, this.posicion);
+    this.collider=new Collider(20.0,this.posicion);
 
     this.display();
   }
@@ -35,15 +36,15 @@ private class Animal extends GameObject {
   }
 
 
-  public int getValor(){
+  public int getValor() {
     return this.valorAnimal;
   }
 
   public Collider getCollider() {
     return this.collider;
   }
-  
-  public int getTipo(){
+
+  public int getTipo() {
     return this.tipo;
   }
 }

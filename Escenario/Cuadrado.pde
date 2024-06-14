@@ -6,8 +6,9 @@ private class Cuadrado {
   public Cuadrado(PVector posicion, int tamLado) {
     this.posicion=posicion;
     this.tamLado=tamLado;
-    noStroke();
-    fill(#21E82F);
-    square(this.posicion.x, this.posicion.y, tamLado);
+  }
+  
+  public PVector getPosicion() {
+    return this.posicion;
   }
 }

@@ -1,7 +1,8 @@
 private class Cabeza {
   private PVector posicion;
   private Collider collider;
-  
+
+  //Arrays para los resultados
   private ArrayList<String> animalTipo;
   private ArrayList<Integer> tiempoComido;
 
@@ -9,14 +10,14 @@ private class Cabeza {
   public Cabeza(PVector posicion) {
     this.posicion=posicion;
     this.display(this.posicion);
-    
+
     animalTipo=new ArrayList<String>();
     tiempoComido= new ArrayList<Integer>();
   }
-  
-//Se puso la visualización de la cabeza por aparte debido a q al estar creando una cabeza en el constructor de snake, constantemente estaba reiniciando las arrays
-  public void display(PVector newPosicion){
-    
+
+  //Se puso la visualización de la cabeza por aparte debido a q al estar creando una cabeza en el constructor de snake, constantemente estaba reiniciando las arrays
+  public void display(PVector newPosicion) {
+
     this.collider=new Collider(20.0, this.posicion);
     this.posicion=newPosicion;
     noStroke();
@@ -29,30 +30,36 @@ private class Cabeza {
     boolean isCollide = this.collider.validarCollider(animalComido.getCollider());
 
     if (isCollide==true) {
+
+      snake.cuerpos.crecer(isCollide);
       
+      
+      //Suma del valor del animal al puntaje total
       int puntajeSumado=animalComido.getValor();
       snake.setPuntaje(snake.getPuntaje()+puntajeSumado);
-      
-      
-      switch(animalComido.getTipo()){
-        case 1:
-          animalTipo.add("Insecto");
-          tiempoComido.add(getTiempo());
-          break;
-        case 2:
-          animalTipo.add("Raton");
-          tiempoComido.add(getTiempo());
-          break;
-        case 3:
-          animalTipo.add("Pajaro");
-          tiempoComido.add(getTiempo());
-          break;
+
+
+      //Se añade el tipo de animal y su tiempo en las arrays
+      switch(animalComido.getTipo()) {
+      case 1:
+        animalTipo.add("Insecto");
+        tiempoComido.add(getTiempo());
+        break;
+      case 2:
+        animalTipo.add("Raton");
+        tiempoComido.add(getTiempo());
+        break;
+      case 3:
+        animalTipo.add("Pajaro");
+        tiempoComido.add(getTiempo());
+        break;
       }
-      
-      
+
+      //Se elimina el animal en pantalla, Escenario creará uno nuevo en otra posicion
       setAnimalExist(false);
       animal.remove(0);
- 
+      
+      
     }
   }
 
