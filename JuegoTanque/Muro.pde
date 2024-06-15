@@ -9,8 +9,14 @@ public Muro(float x, float y,int resistencia){
   this.collider=new Collider(x,y,200,100);
   this.resistencia=resistencia;
 }
-
+//de momento se dibuja con primitivas
 public void display(){
+  fill(255);
+  rect(transform.getPosicion().x,transform.getPosicion().y,200,100);
+}
+
+public boolean colisiona(Bala bala){
+return collider.verificarColision(bala.getCollider());
 }
 
 //metodos accesores
