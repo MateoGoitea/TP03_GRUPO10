@@ -19,12 +19,14 @@ this.mover(direccion);
 
 }
 public void disparar(){
-  for(Bala bala: balas){
-  bala.moveBala();
-}
   balas.add(new Bala(transform.getPosicion().y,transform.getPosicion().y,-200));
-  
 }
+  public void actualizarBala(){
+    for(Bala bala:balas){
+      bala.moveBala();}
+    }
+  
+
 
 public void mover(int direccion){
   
@@ -35,7 +37,7 @@ if (direccion==0) {
       this.transform.getPosicion().x=this.transform.getPosicion().x-velocidad*Time.getDeltaTime(frameRate);
     }
     if(direccion==2){
-     this.disparar();}
+      this.disparar();}
 }
 
   public void setDireccion(int direccion) {

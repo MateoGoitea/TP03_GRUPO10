@@ -15,7 +15,8 @@ class Bala{
   noStroke();
   fill(#DEFC00);
   rect(this.transform.getPosicion().x,this.transform.getPosicion().y,10,20);
-  }
+  
+}
   
   public void moveBala(){
   transform.setPosicion(this.transform.getPosicion().x,this.transform.getPosicion().y+this.velocity*Time.getDeltaTime(frameRate));
@@ -31,5 +32,8 @@ class Bala{
   //metodo accesor getter
   public Collider getCollider(){
   return collider;}
+  
+  public float getVelocity(){
+  return velocity;}
   
 }
