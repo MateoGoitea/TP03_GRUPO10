@@ -1,12 +1,17 @@
 class Bala{
   private Collider collider;
   private Transform transform;
-  public Bala(Transform transform,Collider collider){
-    this.collider=collider;
-    this.transform=transform;
-    // forma y color de la bala
-    noStroke();
-    fill(#EAE418);
-    rect(this.transform.getPosicion().x,this.transform.getPosicion().y,10,20);
+  private float velocity;
+  
+  
+  //constuctor de la bala
+  public Bala(float x,float y,float velocity){
+   this.transform=new Transform(x,y);
+   this.velocity=velocity;
+   this.collider=new Collider(x,y,10,20);
   }
+  //metodo accesor getter
+  public Collider getCollider(){
+  return collider;}
+  
 }

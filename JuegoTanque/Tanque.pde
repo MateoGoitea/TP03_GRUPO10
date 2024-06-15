@@ -1,23 +1,22 @@
 class Tanque{
   private Transform transform;
-  private ImageComponent imageComponent;
+  private ImageComp imag;
   private int velocidad;
   private int direccion;
   
-public Tanque(Transform transform,ImageComponent imageComponent){
-  this.transform=transform;
-  this.imageComponent=imageComponent;
-}
-public Tanque(Transform transform,ImageComponent imageComponent,int velocidad){
-  this.transform=transform;
-  this.imageComponent=imageComponent;
+public Tanque(float x,float y,int velocidad){
+  this.transform=new Transform(x,y);
   this.velocidad=velocidad;
 }
 public void display(){
-imageMode(CENTER);
-this.imageComponent.displayImage(transform.getPosicion(),80,100);
+  
 this.mover(direccion);
+
 }
+public void disparar(){
+
+}
+
 public void mover(int direccion){
   
 if (direccion==0) {

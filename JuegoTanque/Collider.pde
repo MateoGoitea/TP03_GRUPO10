@@ -1,18 +1,19 @@
 class Collider{
 private Transform transform;
-private PVector tamaño;
+private float ancho;
+private float alto;
 
+  //Constructor del collider
+  public Collider(float x, float y ,float ancho,float alto){
+  this.transform=new Transform(x,y);
+  this.ancho=ancho;
+  this.alto=alto;
+  }
+  
+  //metodo de verificacion de una colision; utilizara colliders rectangulares
+public boolean verificarColision(Collider otroCollider){
+  
 
-  public Collider(Transform transform,PVector tamaño){
-  this.transform=transform;
-  this.tamaño=tamaño;
-  //dibujo de prueba del collider
-  fill(255);  
-  rect(this.transform.getPosicion().x,this.transform.getPosicion().y,this.getTamaño().x,this.getTamaño().y);
 }
-public void verificarColision(Collider otroCollider){
 
-}
-public PVector getTamaño(){
-return this.tamaño;}
 }
