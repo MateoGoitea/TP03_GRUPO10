@@ -17,11 +17,13 @@ class Bala{
   rect(this.transform.getPosicion().x,this.transform.getPosicion().y,10,20);
   }
   
-  
-  
+  public void moveBala(){
+  transform.setPosicion(this.transform.getPosicion().x,this.transform.getPosicion().y+this.velocity*Time.getDeltaTime(frameRate));
+  this.actualizarCollider();
+  }
   
   //se encarga de reasignar la posicion mientras la bala se mueve
-  public void actulizarCollider(){  
+  private void actualizarCollider(){  
   PVector pos=transform.getPosicion();
   collider.setPosicion(pos.x,pos.y);
   }

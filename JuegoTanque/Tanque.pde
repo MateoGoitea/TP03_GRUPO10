@@ -11,7 +11,6 @@ public Tanque(float x,float y,int velocidad){
   this.balas=new ArrayList<Bala>();
 }
 public void display(){
-  
   fill(255);
   rect(this.transform.getPosicion().x,this.transform.getPosicion().y,200,100);
   for(Bala bala: balas){
@@ -20,7 +19,9 @@ this.mover(direccion);
 
 }
 public void disparar(){
-  
+  for(Bala bala: balas){
+  bala.moveBala();
+}
   balas.add(new Bala(transform.getPosicion().y,transform.getPosicion().y,-200));
   
 }
