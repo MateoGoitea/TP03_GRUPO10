@@ -12,7 +12,7 @@ class Bala{
   }
   
   public void display(){
-  noStroke();
+  stroke(0);
   fill(#DEFC00);
   rect(this.transform.getPosicion().x,this.transform.getPosicion().y,10,20);
   

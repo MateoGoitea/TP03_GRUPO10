@@ -14,7 +14,7 @@ public Muro(float x, float y,int resistencia,ImageComp img){
 public void display(){
   //fill(255);
   //rect(transform.getPosicion().x,transform.getPosicion().y,200,100);
-  image(this.img.getImg(),this.transform.getPosicion().x-10,this.transform.getPosicion().y+10,200,80);
+  image(this.img.getImg(),this.transform.getPosicion().x,this.transform.getPosicion().y+10,200,80);
 }
 
 public boolean colisiona(Bala bala){
