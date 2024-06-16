@@ -3,14 +3,18 @@ private GestorMurallas gestorMurallas;
 private ImageComp imgTank;
 private ImageComp imgMuro;
 public void setup(){
-  size(600,600);
+  size(900,600);
   imgTank=new ImageComp("tanque.gif");
   tanque=new Tanque(width/2,height-100,200,imgTank);
+  imgMuro=new ImageComp("muro.png");
   gestorMurallas=new GestorMurallas();
    
    for(int i=0;i<5;i++){  //genera los muros 
-    gestorMurallas.agregarMuro(new Muro(i*100,100,int(random(10,30))));
+    gestorMurallas.agregarMuro(new Muro(i*180,100,int(random(10,30)),imgMuro));
    }
+   for(int j=0;j<5;j++){
+    gestorMurallas.agregarMuro(new Muro(j*180,180,int(random(10,30)),imgMuro));
+  }
   
   
 }
