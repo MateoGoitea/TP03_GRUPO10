@@ -1,8 +1,11 @@
 private Tanque tanque;
 private GestorMurallas gestorMurallas;
+private ImageComp imgTank;
+private ImageComp imgMuro;
 public void setup(){
   size(600,600);
-  tanque=new Tanque(width/2,height-100,200);
+  imgTank=new ImageComp("tanque.gif");
+  tanque=new Tanque(width/2,height-100,200,imgTank);
   gestorMurallas=new GestorMurallas();
    
    for(int i=0;i<5;i++){  //genera los muros 

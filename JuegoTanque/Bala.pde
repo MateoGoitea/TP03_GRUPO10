@@ -19,7 +19,8 @@ class Bala{
 }
   
   public void moveBala(){
-  transform.setPosicion(this.transform.getPosicion().x,this.transform.getPosicion().y+this.velocity*Time.getDeltaTime(frameRate));
+    PVector pos=this.transform.getPosicion();
+  transform.setPosicion(pos.x,pos.y+this.velocity*Time.getDeltaTime(frameRate));
   this.actualizarCollider();
   }
   
